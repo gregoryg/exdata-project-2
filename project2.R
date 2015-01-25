@@ -115,14 +115,14 @@ vehicleCodes <- SCC[grep("vehicle", SCC$SCC.Level.Two, ignore.case=TRUE),]$SCC
 message("Preparing question 4")
 qdata <- aggregate(Emissions ~ year, data = NEI[NEI$SCC %in% coalCodes,], FUN = sum)
 png(filename="plot4.png", pointsize=18)
-plot(qdata$year, qdata$Emissions / 1000, xlab = "Year", ylab = "Total Emissions (kilotons)", type="b", main="USA Coal Combustion-related Emissions by Year")
+plot(qdata$year, qdata$Emissions / 1000, xlab = "Year", ylab = "Total Emissions (kilotons)", type="b", main="USA Coal Combustion-related Emissions")
 dev.off()
 
 ## Question 5: How have emissions from motor vehicle sources changed from 1999-2008 in Baltimore City?
 message("Preparing question 5")
 qdata <- aggregate(Emissions ~ year, data = NEI[NEI$fips == "24510" & NEI$SCC %in% vehicleCodes,], FUN = sum)
 png(filename="plot5.png", pointsize=18)
-plot(qdata$year, qdata$Emissions, xlab = "Year", ylab = "Total Emissions (tons)", type="b", main="Motor Vehicle Emissions in Baltimore by Year")
+plot(qdata$year, qdata$Emissions, xlab = "Year", ylab = "Total Emissions (tons)", type="b", main="Motor Vehicle Emissions in Baltimore")
 dev.off()
 
 ## Question 6: Compare emissions from motor vehicle sources in
