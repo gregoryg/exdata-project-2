@@ -64,7 +64,7 @@ comprise two files:
 
     Use the ggplot2 plotting system to make a plot answer this question.
 **** Answer
-     Of the four types of vehicles, only the Point category has not seen a steady decrease
+     Of the four types of sources, only the Point category has not seen a steady decrease
      in PM2.5 emissions.  
      
 [[./plot3.png]]

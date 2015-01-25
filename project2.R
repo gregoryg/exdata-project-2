@@ -93,7 +93,10 @@ message("Preparing question 3")
 qdata <- aggregate(Emissions ~ type+year, data = NEI[NEI$fips == "24510",], FUN = sum)
 
 png(filename="plot3.png", pointsize=18)
-ggplot(data=qdata, aes(x=factor(year), y=Emissions, group=factor(type), color=factor(type))) + geom_line() + geom_point()
+ggplot(data=qdata, aes(x=year, y=Emissions, group=type, color=type)) +
+    geom_line() +
+    geom_point() +
+    labs(title="PM2.5 Emissions in City of Baltimore by Source Type")
 dev.off()
 
 ## Questions 4-6 require subsetting "Coal combustion-related and "Motor vehicle" sources
@@ -112,7 +115,7 @@ vehicleCodes <- SCC[grep("vehicle", SCC$SCC.Level.Two, ignore.case=TRUE),]$SCC
 message("Preparing question 4")
 qdata <- aggregate(Emissions ~ year, data = NEI[NEI$SCC %in% coalCodes,], FUN = sum)
 png(filename="plot4.png", pointsize=18)
-plot(qdata$year, qdata$Emissions / 1000, xlab = "Year", ylab = "Total Emissions (kilotons)", type="b", main="Coal Combustion-related Emissions by Year")
+plot(qdata$year, qdata$Emissions / 1000, xlab = "Year", ylab = "Total Emissions (kilotons)", type="b", main="USA Coal Combustion-related Emissions by Year")
 dev.off()
 
 ## Question 5: How have emissions from motor vehicle sources changed from 1999-2008 in Baltimore City?
@@ -129,5 +132,6 @@ dev.off()
 message("Preparing question 6")
 qdata <- aggregate(Emissions ~ year+fips, data = NEI[NEI$fips %in% c("24510", "06037") & NEI$SCC %in% vehicleCodes,], FUN = sum)
 png(filename="plot6.png", pointsize=18)
-ggplot(data=qdata, aes(x=factor(year), y=Emissions, group=factor(fips), color=factor(fips))) + geom_line() + geom_point()
+ggplot(data=qdata, aes(x=year, y=Emissions, group=fips, color=fips)) + geom_line() + geom_point() +
+    labs(title="Motor Vehicle Emissions Los Angeles County vs City of Baltimore")
 dev.off()
