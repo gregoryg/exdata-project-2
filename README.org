@@ -36,7 +36,9 @@ comprise two files:
 
 ** Questions
 
-*** 1. Have total emissions from PM2.5 decreased in the United States from 1999 to 2008? 
+*** Question 1. 
+    Have total emissions from PM2.5 decreased in the United States from 1999 to 2008?
+
     Using the base plotting system, make a plot showing the total PM2.5 emission from all
     sources for each of the years 1999, 2002, 2005, and 2008.
 
@@ -46,25 +48,36 @@ comprise two files:
 
 [[./plot1.png]]
 
-*** 2. Have total emissions from PM2.5 decreased in the Baltimore City, Maryland (fips == "24510") from 1999 to 2008? 
+*** Question 2. 
+    Have total emissions from PM2.5 decreased in the Baltimore City, Maryland (fips ==
+    "24510") from 1999 to 2008?
+
     Use the base plotting system to make a plot answering this question.
 
 **** Answer:
      PM2.5 emissions in Baltimore have declined between 1999 and 2008, but not steadily.   
 [[./plot2.png]]
-*** 3. Of the four types of sources indicated by the type (point, nonpoint, onroad, nonroad) variable, which of these four sources have seen decreases in emissions from 1999-2008 for Baltimore City? Which have seen increases in emissions from 1999-2008? 
+*** Question 3. 
+    Of the four types of sources indicated by the type (point, nonpoint, onroad, nonroad)
+    variable, which of these four sources have seen decreases in emissions from 1999-2008
+    for Baltimore City? Which have seen increases in emissions from 1999-2008?  
+
     Use the ggplot2 plotting system to make a plot answer this question.
 **** Answer
      Of the four types of vehicles, only the Point category has not seen a steady decrease
      in PM2.5 emissions.  
      
 [[./plot3.png]]
-*** 4. Across the United States, how have emissions from coal combustion-related sources changed from 1999-2008?
+*** Question 4. 
+    Across the United States, how have emissions from coal combustion-related sources
+    changed from 1999-2008?
 **** Answer
      Emissions from coal combustion-related sources have declined in the USA between 1999
 and 2008
 [[./plot4.png]]
-*** 5. How have emissions from motor vehicle sources changed from 1999-2008 in Baltimore City?
+*** Question 5. 
+    How have emissions from motor vehicle sources changed from 1999-2008 in Baltimore
+    City?
 **** Answer
      Motor vehicle emissions in Baltimore have declined year-over-year between 1999 and 2008
 [[./plot5.png]]
